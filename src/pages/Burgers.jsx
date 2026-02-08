@@ -36,11 +36,40 @@ export default function Burgers() {
   const [priceOrder, setPriceOrder] = useState("");
   const [search, setSearch] = useState("")
   
+  const [categories, setCategories] = useState({
+    clasicas: true,
+    premio: true,
+    vegetarianas: true,
+    pollo: true,
+  });
+  
+  const handleCategoryChange = (category) => {
+    setCategories((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
+
   const filteredProducts = useMemo(() => {
     const result = {};
     const query = search.toLowerCase().trim();
 
+    const activeCategories = Object.entries(categories)
+      .filter(([, isActive]) => isActive)
+      .map(([category]) => category);
+
     Object.entries(PRODUCTS).forEach(([category, items]) => {
+
+      console.log(items);
+      
+      // 👉 si hay categorías activas y esta no está seleccionada, se salta
+      if (
+        activeCategories.length > 0 &&
+        !activeCategories.includes(category)
+      ) {
+        return;
+      }
+
       let filteredItems = [...items];
 
       // 🔍 SEARCH
@@ -65,14 +94,14 @@ export default function Burgers() {
         );
       }
 
-      // ❗ Solo mostrar categorías con resultados
       if (filteredItems.length > 0) {
         result[category] = filteredItems;
       }
     });
 
     return result;
-  }, [priceOrder, search]);
+  }, [priceOrder, search, categories]);
+
 
 
   return (
@@ -93,32 +122,34 @@ export default function Burgers() {
           onChange={(e) => setSearch(e.target.value)}
         />
         <ul>
-        <Input
-          label="Clásicas"
-          type="checkbox"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          <Input
+            label="Clásicas"
+            type="checkbox"
+            checked={categories.clasicas}
+            onChange={() => handleCategoryChange("clasicas")}
           />
-        <Input
-          label="Premio"
-          type="checkbox"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+
+          <Input
+            label="Premio"
+            type="checkbox"
+            checked={categories.premio}
+            onChange={() => handleCategoryChange("premio")}
           />
-        <Input
-          label="Vegetarianas"
-          type="checkbox"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+
+          <Input
+            label="Vegetarianas"
+            type="checkbox"
+            checked={categories.vegetarianas}
+            onChange={() => handleCategoryChange("vegetarianas")}
           />
-        <Input
-          label="Pollo"
-          type="checkbox"
-          value="check"
-          onChange={(e) => setSearch(e.target.value)}
+
+          <Input
+            label="Pollo"
+            type="checkbox"
+            checked={categories.pollo}
+            onChange={() => handleCategoryChange("pollo")}
           />
         </ul>
-        
       </header>
 
       {/* Listado */}
