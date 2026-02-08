@@ -1,0 +1,51 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    background: radial-gradient(
+        circle min(581px) at 70% 50%, 
+        #E39B69 10%,
+        #F4D3BB 35%,
+        #FBF9F7 60%, 
+        #f6f6f6 74%);
+
+    & div {
+        width: 50%;
+    }
+
+    & p {
+        color: #4a5565;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+}
+
+.hero__section_right {
+    display: grid;
+    justify-content: center;
+    
+    & div {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 18px;
+        gap: 10px;
+    }
+
+    & h1 {
+        font-size: 65px;
+    }
+    & h1:nth-child(2) {
+        color:#ff7a00;
+    }
+}
+
+.hero__section_left {
+    display: grid;
+    justify-content: center;
+    & img {
+        width: 360px;
+    }
+}

@@ -1,0 +1,61 @@
+.burgers__section {
+  margin-bottom: 4rem;
+}
+
+.burgers__section-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.burgers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.burgers__filters {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-end;
+
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+
+  & ul {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.burgers__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 360px;
+}
+
+.burgers__image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.burgers__image:hover {
+    transform: scale(1.1);
+}
+.burgers__price {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.card__footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}

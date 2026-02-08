@@ -1,0 +1,52 @@
+.menu {
+  padding: 4rem 10rem;
+}
+
+.menu__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.menu__title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu__subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Navegación */
+.menu__nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.menu__nav-item {
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.menu__nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+.menu__nav-item--active {
+  background-color: #ff7a00;
+  color: #fff;
+  border-color: #ff7a00;
+}
+
+/* Contenido */
+.menu__content {
+  min-height: 300px;
+}
