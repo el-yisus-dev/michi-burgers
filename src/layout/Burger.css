@@ -7,6 +7,10 @@
   margin-bottom: 1.5rem;
 }
 
+.burgers__section-title::first-letter {
+  text-transform: capitalize;
+}
+
 .burgers__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
