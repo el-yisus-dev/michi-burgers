@@ -60,7 +60,6 @@ export default function Burgers() {
 
     Object.entries(PRODUCTS).forEach(([category, items]) => {
 
-      console.log(items);
       
       // 👉 si hay categorías activas y esta no está seleccionada, se salta
       if (

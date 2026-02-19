@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+
 import FormRow from "../components/FormRow";
 import Input from "../components/Input";
 import Select from "../components/Select";
 import Button from "../components/Button";
+
 import "../layout/Contact.css";
 
-import ReCAPTCHA from "react-google-recaptcha";
 
 const productOptions = [
   { value: "michi-clasica", label: "Michi Clásica" },
@@ -213,7 +215,7 @@ function handleConfirm(e) {
           </p>
           <FormRow>
             <ReCAPTCHA
-              sitekey="6LfsImcsAAAAAN1nsAiAZJ6dYzG0fifxj200_A8X"
+              sitekey="6LdsiHEsAAAAAP7X6XPo6yO5vI97ymUjJ3KW9zjM"
               onChange={handleCaptcha}
             />
           </FormRow>
